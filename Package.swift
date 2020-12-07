@@ -20,9 +20,5 @@ let package = Package(
     targets: [
         .target(
             name: "Parser",
-            dependencies: ["Theme"]),
-        .testTarget(
-            name: "ParserTests",
-            dependencies: ["Parser"])
-    ]
+            dependencies: ["Theme"])
 )
