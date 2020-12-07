@@ -15,7 +15,7 @@ let package = Package(
             targets: ["Parser"])
     ],
     dependencies: [
-        .package(url: "https://github.com/neutralradiance/swift-theme.git", .branch("master"))
+        .package(name: "Theme", url: "https://github.com/neutralradiance/swift-theme.git", .branch("master"))
     ],
     targets: [
         .target(
