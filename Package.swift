@@ -21,4 +21,5 @@ let package = Package(
         .target(
             name: "Parser",
             dependencies: ["Theme"])
+    ]
 )
