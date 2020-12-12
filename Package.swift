@@ -15,14 +15,11 @@ let package = Package(
             targets: ["Parser"])
     ],
     dependencies: [
-        .package(url: "https://github.com/neutralradiance/swift-theme.git", from: "0.8")
+        .package(name: "Theme", url: "https://github.com/neutralradiance/swift-theme.git", .branch("master"))
     ],
     targets: [
         .target(
             name: "Parser",
-            dependencies: ["Theme"]),
-        .testTarget(
-            name: "ParserTests",
-            dependencies: ["Parser"])
+            dependencies: ["Theme"])
     ]
 )
