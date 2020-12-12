@@ -21,11 +21,12 @@ public extension ParsingLanguage {
         #elseif os(iOS)
         let defaultForeground: NativeColor = .label
         #endif
+        let defaultAttributes: [NSAttributedString.Key: Any] =
+            [.foregroundColor: theme?.foreground ?? defaultForeground,
+             .font: font]
         let string = NSMutableAttributedString(
             string: text,
-            attributes:
-                [.foregroundColor: theme?.foreground ?? defaultForeground,
-                 .font: font]
+            attributes: defaultAttributes
         )
         do {
             handler?(
@@ -35,7 +36,11 @@ public extension ParsingLanguage {
                         guard !result.ranges.isEmpty else { return }
                         if let context = result.context {
                             var attributes: [NSAttributedString.Key: Any] =
-                                [.foregroundColor: (context.color ?? theme?[context.index]) ?? defaultForeground]
+                                [.foregroundColor:
+                                    context.color ??
+                                    theme?[context.index] ??
+                                    theme?.foreground ??
+                                    defaultForeground]
                             if let background = context.background ?? theme?[context.bgIndex] {
                                 attributes[.backgroundColor] = background
                             }

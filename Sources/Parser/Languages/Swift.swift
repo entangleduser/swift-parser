@@ -9,6 +9,7 @@ import Foundation
 
 public struct Swift: ParsingLanguage {
     public var name: String { "swift" }
+    public var identifier: String { "public.swift-source" }
     public var delimiters: CharacterSet { .delimiters }
     public var rules: Syntax {
         Rule( // number literals

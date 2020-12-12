@@ -9,6 +9,7 @@ import Foundation
 
 public struct Markdown: ParsingLanguage {
     public var name: String { "markdown" }
+    public var identifier: String { "net.daringfireball.markdown" }
     public var delimiters: CharacterSet { .delimiters }
     public var rules: Syntax {
             // italic

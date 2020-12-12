@@ -7,8 +7,9 @@
 
 import Foundation
 
-public struct Bash: ParsingLanguage {
-    public var name: String { "bash" }
+public struct Shell: ParsingLanguage {
+    public var name: String { "shell" }
+    public var identifier: String { "public.shell-script" }
     public var delimiters: CharacterSet { .delimiters }
     public var rules: Syntax {
         Rule()
